@@ -7,6 +7,7 @@ import "react-toastify/dist/ReactToastify.min.css";
 import firebase from "firebase";
 import "firebase/auth";
 import "./App.css";
+
 import Home from "./Pages/Home";
 import Signin from "./Pages/Signin";
 import SignUP from "./Pages/Signup";
@@ -14,7 +15,10 @@ import PageNotFound from "./Pages/PageNotFound";
 import { userContext } from "./Context/UserContext";
 import Footer from "./Layout/Footer";
 import Header from "./Layout/Header";
+//init firebase
+import config from "./Firebase/Firebaseconfig";
 
+firebase.initializeApp(config);
 function App() {
   const [user, setUser] = useState(null);
   return (
